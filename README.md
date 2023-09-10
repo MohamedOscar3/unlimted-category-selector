@@ -19,7 +19,7 @@
 4. Run composer install
 5. Run php artisan key:generate
 6. Run php artisan migrate
-6. run php artisan:serve
+7. run php artisan:serve
 
 
 
