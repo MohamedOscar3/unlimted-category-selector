@@ -9,7 +9,7 @@ class CategoriesSeeder extends Seeder
 {
     public function run(): void
     {
-        $count = 100;
+        $count = 5;
         //Seed main categories
         try {
 
