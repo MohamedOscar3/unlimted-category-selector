@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\CategoryRequest;
 use App\Models\Category;
 use Illuminate\Http\Request;
 
@@ -12,7 +13,7 @@ class CategoryController extends Controller
         return view("categories.index");
     }
 
-    public function getSelectCategoryOptions(Request $request) {
+    public function getSelectCategoryOptions(CategoryRequest $request) {
         $categories = Category::where("parent_id",$request->parent_id);
 
         if (!empty($request->search) && $request->search != "") {

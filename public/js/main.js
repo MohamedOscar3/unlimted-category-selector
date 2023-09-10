@@ -29,6 +29,9 @@ function addSubCategory(parent_id,element) {
 function createSelect2(element,parent_id) {
     element.select2({
         ajax: {
+            headers: {
+                'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+            },
             url: '/categories/get-select-category-options',
             dataType: 'json',
             placeholder: 'Select category',
