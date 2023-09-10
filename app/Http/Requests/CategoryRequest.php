@@ -9,7 +9,7 @@ class CategoryRequest extends FormRequest
     public function rules(): array
     {
         return [
-            "parent_id"=>"exists:categories,id",
+            "parent_id"=>"exists:categories,id|nullable",
             "search",
         ];
     }
