@@ -6,6 +6,9 @@ use Illuminate\Foundation\Http\FormRequest;
 
 class CategoryRequest extends FormRequest
 {
+    /**
+     * @return array<int|string,string>
+     */
     public function rules(): array
     {
         return [
