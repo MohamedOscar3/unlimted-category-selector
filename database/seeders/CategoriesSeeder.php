@@ -9,7 +9,7 @@ class CategoriesSeeder extends Seeder
 {
     public function run(): void
     {
-        $count = 5;
+        $count = 10;
         //Seed main categories
         try {
             $categories = [];
@@ -24,7 +24,7 @@ class CategoriesSeeder extends Seeder
 
     }
 
-    private function addCategoriesToParent($categories,$count,$levels = 5) {
+    private function addCategoriesToParent($categories,$count,$levels = 3) {
         if ($levels < 0) {
             return;
         }
@@ -32,7 +32,6 @@ class CategoriesSeeder extends Seeder
         foreach ($categories as $category) {
             $categoriesChild = [];
             for ($i = 1; $i <= $count;$i++) {
-
                 $categoriesChild[] = (new Category())->create(["name"=>"Sub Category ".$category->id . "(".$i .")" ,"parent_id" => $category->id]);
             }
 

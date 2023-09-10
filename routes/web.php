@@ -13,6 +13,11 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get("categories",[\App\Http\Controllers\CategoryController::class,"index"])->name("categories.index");
+Route::redirect("/","/categories");
+
+Route::get("categories/get-select-category-options",[\App\Http\Controllers\CategoryController::class,"getSelectCategoryOptions"])->name("categories.get-select-category-options");
+
+
+

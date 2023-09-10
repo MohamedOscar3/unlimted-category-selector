@@ -9,8 +9,8 @@ return new class extends Migration {
     {
         Schema::create('categories', function (Blueprint $table) {
             $table->bigIncrements("id");
-            $table->string('name',255)->unique();
-            $table->unsignedBigInteger('parent_id')->nullable();
+            $table->string('name',255)->unique()->index();
+            $table->unsignedBigInteger('parent_id')->nullable()->index();
             $table->timestamps();
             //create foreign id between parent and child category
             $table->foreign("parent_id")->references("id")->on("categories")->onDelete("cascade");
