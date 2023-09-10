@@ -35,6 +35,7 @@ function createSelect2(element,parent_id) {
             url: '/categories/get-select-category-options',
             dataType: 'json',
             placeholder: 'Select category',
+            delay:1000,
             data: function (params) {
                 var query = {
                     search: params.term,
